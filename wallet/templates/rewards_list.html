@@ -1,0 +1,21 @@
+<table>
+    <th>
+    <td>Points</td>
+    <td>Customer Id</td>
+    <td>Name</td>
+    <td>Advertisement</td>
+    <td>Tickets</td>
+
+
+</th>
+{% for Reward in rewards%}
+<tr>
+    <td>{{Reward.points}}</td>
+    <td>{{Reward.customer_id}}</td>
+    <td>{{Reward.name}}</td>
+    <td>{{Reward.advertisement}}</td>
+    <td>{{Reward.tickets}}</td>
+
+</tr>
+{% endfor %}
+</table> 

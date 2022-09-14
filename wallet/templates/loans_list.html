@@ -1,0 +1,46 @@
+<table>
+    <th>
+    <td>Loan Term</td>
+    <td>Amount</td>
+    <td>Payment Due</td>
+    <td>Loan Balance</td>
+    <td>Purpose</td>
+    <td>Interest Rate</td>
+
+
+
+</th>
+{% for Loan in loans%}
+
+<tr class="table-active">...</tr>
+
+<tr class="table-primary"></tr>
+<tr class="table-secondary"></tr>
+<tr class="table-success"></tr>
+<tr class="table-danger"></tr>
+<tr class="table-warning"></tr>
+<tr class="table-info"></tr>
+<tr class="table-light"></tr>
+<tr class="table-dark"></tr>
+<tr class="table-dark"></tr>
+<tr class="table-dark"></tr>
+<tr class="table-dark"></tr>
+<tr>
+    <td class="table-active"></td>
+  
+    <td class="table-primary">2Months</td>
+    <td class="table-secondary">20000</td>
+    <td class="table-success">22Sep</td>
+    <td class="table-danger">15000</td>
+    <td class="table-warning">Schoolfees</td>
+    <td class="table-info">5%</td>
+  </tr>
+<!-- <tr>
+    <td>{{Loan.loan_term}}</td>
+    <td>{{Loan.amount}}</td>
+    <td>{{Loan.payment_due}}</td>
+    <td>{{Loan.purpose}}</td>
+    <td>{{Loan.interest_rate}}</td>
+</tr> -->
+{% endfor %}
+</table> 

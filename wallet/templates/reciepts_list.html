@@ -1,0 +1,20 @@
+<table>
+    <th>
+    <td>Amount</td>
+    <td>Date Time</td>
+    <td>Transaction</td>
+    <td>Reciept Type</td>
+    <td>File</td>
+
+
+</th>
+{% for Reciept in reciepts%}
+<tr>
+    <td>{{Reciept.amount}}</td>
+    <td>{{Reciept.date_time}}</td>
+    <td>{{Reciept.transaction}}</td>
+    <td>{{Reciept.reciept_type}}</td>
+    <td>{{Reciept.file}}</td>
+</tr>
+{% endfor %}
+</table> 

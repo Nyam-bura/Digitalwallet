@@ -1,0 +1,30 @@
+<table>
+    <th>
+    <td>Description</td>
+    <td>Date Time</td>
+    <td>Source</td>
+    <td>Value</td>
+    <td>Amount</td>
+    <td>Transaction ref</td>
+    <td>Origin</td>
+    <td>Bonus credit</td>
+    <td>Destination</td>
+    <td>Status</td>
+    <td>dob</td>
+
+</th>
+{% for Transaction in transactions %}
+<tr>
+    <td>{{Transaction.description}}</td>
+    <td>{{Transaction.date_time}}</td>
+    <td>{{Transaction.source}}</td>
+    <td>{{Transaction.origin}}</td>
+    <td>{{Transaction.destination}}</td>
+    <td>{{Transaction.transaction_ref}}</td>
+    <td>{{Transaction.bonus_credit}}</td>
+    <td>{{Transaction.value}}</td>
+    <td>{{Transaction.amount}}</td>
+    <td>{{Transaction.status}}</td>
+</tr>
+{% endfor %}
+</table> 
