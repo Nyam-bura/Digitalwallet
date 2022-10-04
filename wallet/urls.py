@@ -1,6 +1,6 @@
 # from ast import pattern
 from django.urls import path
-from .views import list_account, list_cards, list_customer, list_loans, list_notificatios, list_parties, list_reciepts, list_rewards, list_transactions, list_wallet, register_account, register_card, register_customer, register_loan, register_notification, register_reciept, register_reward, register_thirdparty, register_transaction, register_wallet
+from .views import customer_profile,edit_wallet, edit_profile, list_account, list_cards, list_customer, list_loans,wallet_profile, list_notificatios, list_parties, list_reciepts, list_rewards, list_transactions, list_wallet, register_account, register_card, register_customer, register_loan, register_notification, register_reciept, register_reward, register_thirdparty, register_transaction, register_wallet
 
 urlpatterns= [
     path("register/",register_customer,name="registration"),
@@ -22,7 +22,17 @@ urlpatterns= [
     path("notifications/",list_notificatios,name="notifications_list"),
     path("reciepts/",list_reciepts,name="reciepts_list"),
     path("loans/",list_loans,name="loans_list"),
-        path("rewards/",list_rewards,name="rewards_list"),
+    path("rewards/",list_rewards,name="rewards_list"),
+
+    path("customers/<int:id>/",customer_profile,name="customer_profile"),
+    path("wallets/<int:id>/",wallet_profile,name="wallet_profile"),
+
+
+
+    path("customers/edit/<int:id>/",edit_profile,name="edit_profile"),
+    path("wallets/edit/<int:id>/",edit_wallet,name="edit_wallet"),
+
+
 
 
 

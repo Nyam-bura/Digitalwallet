@@ -1,7 +1,7 @@
-from errno import EALREADY
-import re
-from django.shortcuts import render
-from wallet.models import Customer
+# from errno import EALREADY
+# import re
+from django.shortcuts import redirect, render
+# from wallet.models import Customer
 from .models import Account, Card, Customer, Loan, Notification, Reciept, Reward, Thirdparty, Transaction, Wallet
 from .forms import AccountRegistrationForm, CardRegistrationForm, CustomerRegistrationForm, LoanRegistrationFOrm, NotificationRegistrationForm, RecieptRegistrationForm, RewardRegistrationForm, ThirdPartyRegistrationForm, TransactionRegistrationForm, WalletRegistrationForm
 # Create your views here.
@@ -16,9 +16,24 @@ def register_customer(request):
             return render(request,"wallet/register_customer.html",{"form":form})
 
 def list_customer(request):
-    customer= Customer.objects.all()
-    return render(request,"customers_list.html",{"customers":customer})
+    customers= Customer.objects.all()
+    return render(request,"customers_list.html",{"customers":customers})
 
+def customer_profile(request, id):
+    customers = Customer.objects.get(id=id)
+    return render(request,"customer_profile.html",{"customers":customers})
+
+
+def edit_profile(request,id):
+    customer = Customer.objects.get(id=id)
+    if request.method =="POST":
+        form = CustomerRegistrationForm(request.POST, instance=customer)
+        if form.is_valid():
+            form.save
+            return redirect("customer_profile", id=customer.id)
+    else:
+        form = CustomerRegistrationForm(instance=customer)
+        return render(request,"edit_profile.html",{"form":form})
 
 
 
@@ -35,6 +50,23 @@ def register_wallet(request):
 def list_wallet(request):
     wallets = Wallet.objects.all()
     return render(request,"wallets_list.html",{"wallet":wallets})
+
+def wallet_profile(request, id):
+    wallets = Wallet.objects.get(id=id)
+    return render(request,"wallet_profile.html",{"wallets":wallets})
+
+def edit_wallet(request,id):
+    wallet = Wallet.objects.get(id=id)
+    if request.method =="POST":
+        form = WalletRegistrationForm(request.POST, instance=wallet)
+        if form.is_valid():
+            form.save
+            return redirect("edit_wallet", id=wallet.id)
+    else:
+        form = CustomerRegistrationForm(instance=wallet)
+        return render(request,"edit_wallet.html",{"form":form})
+
+    
 
 def register_account(request):
     if request.method == "POST":

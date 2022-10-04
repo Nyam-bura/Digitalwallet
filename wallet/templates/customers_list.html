@@ -1,54 +1,40 @@
+<style>
+    table th, td  {
+      border: 1px solid;
+      padding: 10px;
+    }
+    th{
+      color: white;
+      background-color: rgb(43, 221, 150);
+    }
+    table {
+      width: 80%;
+      border-collapse: collapse;
+      margin-left: 10%;
+    }
+</style>
+ 
  <table>
-    <th>
-    <td>FirstName</td>
-    <td>Age</td>
-    <td>Email</td>
-    <td>Address</td>
-    <td>LastName</td>
-    <td>phonenumber</td>
-    <td>nationality</td>
-    <td>occupation</td>
-    <td>profile picture</td>
-    <td>Date created</td>
-    <td>dob</td>
+    <tr>
+    <th>FirstName</th>
+    <th>Age</th>
+    <th>Email</th>
+    <th>Address</th>
+    <th>LastName</th>
+    <th>phonenumber</th>
+    <th>nationality</th>
+    <th>occupation</th>
+    <th>profile picture</th>
+    <th>Date created</th>
+    <th>dob</th>
 
-</th>
+</tr>
 {% for Customer in customers %}
-<tr class="table-active">...</tr>
-
-<tr class="table-primary"></tr>
-<tr class="table-secondary"></tr>
-<tr class="table-success"></tr>
-<tr class="table-danger"></tr>
-<tr class="table-warning"></tr>
-<tr class="table-info"></tr>
-<tr class="table-light"></tr>
-<tr class="table-dark"></tr>
-<tr class="table-dark"></tr>
-<tr class="table-dark"></tr>
-<tr class="table-dark"></tr>
-<tr>
-    <td class="table-active"></td>
-  
-    <td class="table-primary">Jane</td>
-    <td class="table-secondary">20</td>
-    <td class="table-success">nyamburaajanee@gmail.com</td>
-    <td class="table-danger">616</td>
-    <td class="table-warning">Nyambura</td>
-    <td class="table-info">0113544192</td>
-    <td class="table-light">Kenyan</td>
-    <td class="table-dark">software_developer</td>
-    <td class="table-dark">profile_picture</td>
-    <td class="table-dark">14/09/2022</td>
-    <td class="table-dark">01/2002</td>
-
-
-  </tr>
-<!-- <tr> -->
-    <!-- <td>{{Customer.First_Name}}</td>
-    <td>{{Customer.Age}}</td>
-    <td>{{Customer.Email}}</td>
-    <td>{{Customer.last_Name}}</td>
+<tr> 
+    <td>{{Customer.first_name}}</td>
+    <td>{{Customer.age}}</td>
+    <td>{{Customer.email}}</td>
+    <td>{{Customer.last_name}}</td>
     <td>{{Customer.nationality}}</td>
     <td>{{Customer.occupation}}</td>
     <td>{{Customer.dob}}</td>
@@ -56,6 +42,8 @@
     <td>{{Customer.date_created}}</td>
     <td>{{Customer.address}}</td>
     <td>{{Customer.phonenumber}}</td>
-</tr> -->
+    <td><a href="{%url 'customer_profile'}" id=customer.id%> view profile</a></td>
+   
+</tr>
 {% endfor %}
 </table> 

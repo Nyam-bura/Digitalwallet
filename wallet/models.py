@@ -15,7 +15,7 @@ class Customer(models.Model):
     age = models.PositiveSmallIntegerField()
     nationality =models.CharField(max_length=30)
     occupation=models.CharField(max_length=30)
-    profile_picture=models.ImageField(upload_to='profile_pictures/',null=True)
+    profile_picture=models.ImageField(upload_to='profile_picture/',null=True)
     date_created = models.DateTimeField(default=timezone.now)
     dob =models.DateField()
     GENDER_CHOICES =(
