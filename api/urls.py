@@ -1,0 +1,20 @@
+
+from django.urls import path, include
+from rest_framework import routers
+from .views import AccountViewSet, CardViewSet, CustomerViewSet, LoanViewSet, NotificationViewSet, RecieptViewSet, TransactionViewSet, WalletViewSet
+
+router = routers.DefaultRouter()
+router.register(r"customers",CustomerViewSet)
+router.register(r"wallets",WalletViewSet)
+router.register(r"accounts",AccountViewSet)
+router.register(r"cards",CardViewSet)
+router.register(r"transactions",TransactionViewSet)
+router.register(r"loans",LoanViewSet)
+router.register(r"reciepts",RecieptViewSet)
+router.register(r"notifications",NotificationViewSet)
+
+
+
+urlpatterns=[
+    path("",include(router.urls)),
+]

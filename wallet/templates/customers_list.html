@@ -4,8 +4,8 @@
       padding: 10px;
     }
     th{
-      color: white;
-      background-color: rgb(43, 221, 150);
+      color: rgb(224, 210, 210);
+      background-color: rgb(105, 43, 221);
     }
     table {
       width: 80%;
@@ -14,8 +14,8 @@
     }
 </style>
  
- <table>
-    <tr>
+<table>
+  <tr>
     <th>FirstName</th>
     <th>Age</th>
     <th>Email</th>
@@ -28,22 +28,21 @@
     <th>Date created</th>
     <th>dob</th>
 
-</tr>
-{% for Customer in customers %}
-<tr> 
+  </tr>
+  {% for Customer in customers %}
+  <tr> 
     <td>{{Customer.first_name}}</td>
     <td>{{Customer.age}}</td>
     <td>{{Customer.email}}</td>
+    <td>{{Customer.address}}</td>
     <td>{{Customer.last_name}}</td>
+    <td>{{Customer.phonenumber}}</td>
     <td>{{Customer.nationality}}</td>
     <td>{{Customer.occupation}}</td>
-    <td>{{Customer.dob}}</td>
-    <td>{{Customer.profile_picture}}</td>
     <td>{{Customer.date_created}}</td>
-    <td>{{Customer.address}}</td>
-    <td>{{Customer.phonenumber}}</td>
-    <td><a href="{%url 'customer_profile'}" id=customer.id%> view profile</a></td>
-   
-</tr>
-{% endfor %}
+    <td>{{Customer.dob}}</td>
+    <td><a href=" {% url 'customer_profile' id=Customer.id %}">view profile </a></td>
+  </tr>
+  {% endfor %}
 </table> 
+

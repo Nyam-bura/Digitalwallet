@@ -1,18 +1,34 @@
+<style>
+    table th, td  {
+      border: 1px solid;
+      padding: 10px;
+    }
+    th{
+      color: rgb(231, 218, 218);
+      background-color: rgb(43, 221, 111);
+    }
+    table {
+      width: 80%;
+      border-collapse: collapse;
+      margin-left: 10%;
+    }
+</style>
 <table>
     <th>
-    <td>Message</td>
-    <td>Title</td>
-    <td>Name</td>
-    <td>Status</td>
-    <td>Date Time
+    <th>Message</th>
+    <th>Title</th>
+    <th>Name</th>
+    <th>Status</th>
+    <th>Date Time</th>
 
-</th>
 {% for Notification in notifications%}
 <tr>
-    <td>{{Notification.message}}</td>
-    <td>{{Notification.title}}</td>
-    <td>{{Notification.status}}</td>
-    <td>{{Notification.date_time}}</td>
+    <th>{{Notification.message}}</th>
+    <th>{{Notification.title}}</th>
+    <th>{{Notification.status}}</th>
+    <th>{{Notification.date_time}}</th>
+    <th><a href=" {% url 'notifications_profile' id=Notification.id%}" >view profile </a></th>
+
 </tr>
 {% endfor %}
 </table> 

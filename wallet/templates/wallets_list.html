@@ -1,12 +1,27 @@
+<style>
+    table th, td  {
+      border: 1px solid;
+      padding: 10px;
+    }
+    th{
+      color: white;
+      background-color: rgb(43, 221, 150);
+    }
+    table {
+      width: 80%;
+      border-collapse: collapse;
+      margin-left: 10%;
+    }
+</style>
 <table>
-    <th>
-    <td>Currency</td>
-    <td>Balance</td>
-    <td>Customer</td>
-    <td>Pin</td>
-    <td>Amount</td>
+    <tr>
+    <th>Currency</th>
+    <th>Balance</th>
+    <th>Customer</th>
+    <th>Pin</th>
+    <th>Amount</th>
 
-</th>
+</tr>
 {% for Wallet in wallets%}
 <tr>
     <td>{{Wallet.currency}}</td>
@@ -14,6 +29,8 @@
     <td>{{Wallet.customer}}</td>
     <td>{{Wallet.pin}}</td>
     <td>{{Wallet.amount}}</td>
+   <td><a href="{%url 'wallet_profile'}" id=wallet.id%> view profile</a></td>
+
 </tr>
 {% endfor %}
 </table> 

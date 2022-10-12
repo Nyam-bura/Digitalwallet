@@ -1,3 +1,19 @@
+<style>
+    table th, td  {
+      border: 1px solid;
+      padding: 10px;
+    }
+    th{
+      color: white;
+      background-color: rgb(43, 221, 150);
+    }
+    table {
+      width: 80%;
+      border-collapse: collapse;
+      margin-left: 10%;
+    }
+    </style>
+
 <table>
     <th>
     <td>Account Type</td>
@@ -12,6 +28,8 @@
     <td>{{Account.account_number}}</td>
     <td>{{Account.balance}}</td>
     <td>{{Account.description}}</td>
+    <td><a href="{%url 'account_profile'}" id=account.id%> view profile</a></td>
+
 </tr>
 {% endfor %}
 </table> 

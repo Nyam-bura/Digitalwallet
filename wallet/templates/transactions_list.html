@@ -1,4 +1,18 @@
-<table>
+<style>
+    table th, td  {
+      border: 1px solid;
+      padding: 10px;
+    }
+    th{
+      color: white;
+      background-color: rgb(43, 221, 150);
+    }
+    table {
+      width: 80%;
+      border-collapse: collapse;
+      margin-left: 10%;
+    }
+</style><table>
     <th>
     <td>Description</td>
     <td>Date Time</td>
@@ -15,16 +29,18 @@
 </th>
 {% for Transaction in transactions %}
 <tr>
-    <td>{{Transaction.description}}</td>
-    <td>{{Transaction.date_time}}</td>
-    <td>{{Transaction.source}}</td>
-    <td>{{Transaction.origin}}</td>
-    <td>{{Transaction.destination}}</td>
-    <td>{{Transaction.transaction_ref}}</td>
-    <td>{{Transaction.bonus_credit}}</td>
-    <td>{{Transaction.value}}</td>
-    <td>{{Transaction.amount}}</td>
-    <td>{{Transaction.status}}</td>
+    <th>{{Transaction.description}}</th>
+    <th>{{Transaction.date_time}}</th>
+    <th>{{Transaction.source}}</th>
+    <th>{{Transaction.origin}}</th>
+    <th>{{Transaction.destination}}</th>
+    <th>{{Transaction.transaction_ref}}</th>
+    <th>{{Transaction.bonus_credit}}</th>
+    <th>{{Transaction.value}}</th>
+    <th>{{Transaction.amount}}</th>
+    <th>{{Transaction.status}}</th>
+    <th><a href="{%url 'transaction_profile'}" id=transaction.id%> view profile</a></td>
+
 </tr>
 {% endfor %}
 </table> 
